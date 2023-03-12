@@ -119,8 +119,8 @@
         if (!activeElement) {
           return null
         }
-        // The user might be focused on an element inside a toot. We want to
-        // move relative to that toot.
+        // The user might be focused on an element inside a post. We want to
+        // move relative to that post.
         const activeArticle = activeElement.closest('article')
         if (!activeArticle) {
           return null

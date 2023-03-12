@@ -193,7 +193,7 @@ export default {
   pinPage: 'Закрепить {label}',
   // Status composition
   composeStatus: 'Создать запись',
-  postStatus: 'Опубликовать!',
+  postStatus2: 'Опубликовать!',
   contentWarning: 'Предупреждение о содержимом',
   dropToUpload: 'Перетащите для загрузки',
   invalidFileType: 'Неверный тип файла',

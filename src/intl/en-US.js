@@ -27,7 +27,7 @@ export default {
   `,
   // Manifest
   longAppName: 'Semaphore for Mastodon',
-  newStatus: 'New toot',
+  newStatus: 'New post',
   // Generic UI
   loading: 'Loading',
   okay: 'OK',
@@ -66,7 +66,7 @@ export default {
   local: 'Local',
   notifications: 'Notifications',
   mutedUsers: 'Muted users',
-  pinnedStatuses: 'Pinned toots',
+  pinnedStatuses: 'Pinned posts',
   followRequests: 'Follow requests',
   followRequestsLabel: `Follow requests {hasFollowRequests, select,
     true {({count})}
@@ -102,7 +102,7 @@ export default {
   listNotLoggedIn: 'A list will appear here when logged in.',
   notificationsNotLoggedIn: 'Your notifications will appear here when logged in.',
   notificationMentionsNotLoggedIn: 'Your notification mentions will appear here when logged in.',
-  statusNotLoggedIn: 'A toot thread will appear here when logged in.',
+  statusNotLoggedIn: 'A post thread will appear here when logged in.',
   tagNotLoggedIn: 'A hashtag timeline will appear here when logged in.',
   // Notification subpages
   filters: 'Filters',
@@ -132,7 +132,7 @@ export default {
       }
       to switch columns
     </li>
-    <li><kbd>7</kbd> or <kbd>c</kbd> to compose a new toot</li>
+    <li><kbd>7</kbd> or <kbd>c</kbd> to compose a new post</li>
     <li><kbd>s</kbd> or <kbd>/</kbd> to search</li>
     <li><kbd>g</kbd> + <kbd>h</kbd> to go home</li>
     <li><kbd>g</kbd> + <kbd>n</kbd> to go to notifications</li>
@@ -144,8 +144,8 @@ export default {
     <li><kbd>Backspace</kbd> to go back, close dialogs</li>
   `,
   timelineHotkeys: `
-    <li><kbd>j</kbd> or <kbd>↓</kbd> to activate the next toot</li>
-    <li><kbd>k</kbd> or <kbd>↑</kbd> to activate the previous toot</li>
+    <li><kbd>j</kbd> or <kbd>↓</kbd> to activate the next post</li>
+    <li><kbd>k</kbd> or <kbd>↑</kbd> to activate the previous post</li>
     <li><kbd>.</kbd> to show more and scroll to top</li>
     <li><kbd>o</kbd> to open</li>
     <li><kbd>f</kbd> to favorite</li>
@@ -192,8 +192,8 @@ export default {
   }`,
   pinPage: 'Pin {label}',
   // Status composition
-  composeStatus: 'Compose toot',
-  postStatus: 'Toot!',
+  composeStatus: 'Compose post',
+  postStatus: 'Post',
   contentWarning: 'Content warning',
   dropToUpload: 'Drop to upload',
   invalidFileType: 'Invalid file type',
@@ -275,25 +275,25 @@ export default {
   additionalComments: 'Additional comments',
   forwardDescription: 'Forward to the moderators of {instance} as well?',
   forwardLabel: 'Forward to {instance}',
-  unableToLoadStatuses: 'Unable to load recent toots: {error}',
+  unableToLoadStatuses: 'Unable to load recent posts: {error}',
   report: 'Report',
   noContent: '(No content)',
-  noStatuses: 'No toots to report',
+  noStatuses: 'No posts to report',
   // Status options
   unpinFromProfile: 'Unpin from profile',
   pinToProfile: 'Pin to profile',
   muteConversation: 'Mute conversation',
   unmuteConversation: 'Unmute conversation',
-  bookmarkStatus: 'Bookmark toot',
-  unbookmarkStatus: 'Unbookmark toot',
+  bookmarkStatus: 'Bookmark post',
+  unbookmarkStatus: 'Unbookmark post',
   deleteAndRedraft: 'Delete and redraft',
-  reportStatus: 'Report toot',
-  shareStatus: 'Share toot',
-  copyLinkToStatus: 'Copy link to toot',
+  reportStatus: 'Report post',
+  shareStatus: 'Share post',
+  copyLinkToStatus: 'Copy link to post',
   // Account profile
   profileForAccount: 'Profile for {account}',
   statisticsAndMoreOptions: 'Stats and more options',
-  statuses: 'Toots',
+  statuses: 'posts',
   follows: 'Follows',
   followers: 'Followers',
   moreOptions: 'More options',
@@ -373,10 +373,10 @@ export default {
   largeMedia: 'Show large inline images and videos',
   autoplayGifs: 'Autoplay animated GIFs',
   hideCards: 'Hide link preview cards',
-  underlineLinks: 'Underline links in toots and profiles',
+  underlineLinks: 'Underline links in posts and profiles',
   accessibility: 'Accessibility',
   reduceMotion: 'Reduce motion in UI animations',
-  disableTappable: 'Disable tappable area on entire toot',
+  disableTappable: 'Disable tappable area on entire post',
   removeEmoji: 'Remove emoji from user display names',
   shortAria: 'Use short article ARIA labels',
   theme: 'Theme',
@@ -416,7 +416,7 @@ export default {
   // to see a description. It's hard to properly internationalize, so we just break up the strings.
   disableInfiniteScrollPre: 'Disable',
   disableInfiniteScrollText: 'infinite scroll',
-  disableInfiniteScrollDescription: `When infinite scroll is disabled, new toots will not automatically appear at
+  disableInfiniteScrollDescription: `When infinite scroll is disabled, new posts will not automatically appear at
              the bottom or top of the timeline. Instead, buttons will allow you to
              load more content on demand.`,
   disableInfiniteScrollPost: '',
@@ -475,7 +475,7 @@ export default {
   newFollowers: 'New followers',
   reblogs: 'Boosts',
   pollResults: 'Poll results',
-  subscriptions: 'Subscribed toots',
+  subscriptions: 'Subscribed posts',
   needToReauthenticate: 'You need to reauthenticate in order to enable push notification. Log out of {instance}?',
   failedToUpdatePush: 'Failed to update push notification settings: {error}',
   // Themes
@@ -509,11 +509,11 @@ export default {
     one {1 time}
     other {{count} times}
   }`,
-  pinnedStatus: 'Pinned toot',
-  rebloggedYou: 'boosted your toot',
-  favoritedYou: 'favorited your toot',
+  pinnedStatus: 'Pinned post',
+  rebloggedYou: 'boosted your post',
+  favoritedYou: 'favorited your post',
   followedYou: 'followed you',
-  edited: 'edited their toot',
+  edited: 'edited their post',
   requestedFollow: 'requested to follow you',
   reported: 'filed a report',
   signedUp: 'signed up',
@@ -529,14 +529,14 @@ export default {
   clickToShowSensitive: 'Sensitive content. Click to show.',
   longPost: 'Long post',
   // Accessible status labels
-  accountRebloggedYou: '{account} boosted your toot',
-  accountFavoritedYou: '{account} favorited your toot',
-  accountEdited: '{account} edited their toot',
+  accountRebloggedYou: '{account} boosted your post',
+  accountFavoritedYou: '{account} favorited your post',
+  accountEdited: '{account} edited their post',
   rebloggedByAccount: 'Boosted by {account}',
   contentWarningContent: 'Content warning: {spoiler}',
   hasMedia: 'has media',
   hasPoll: 'has poll',
-  shortStatusLabel: '{privacy} toot by {account}',
+  shortStatusLabel: '{privacy} post by {account}',
   // Privacy types
   public: 'Public',
   unlisted: 'Unlisted',
@@ -590,21 +590,21 @@ export default {
   showCountMore: 'Show {count} more',
   nothingToShow: 'Nothing to show.',
   // status thread page
-  statusThreadPage: 'Toot thread page',
-  status: 'Toot',
+  statusThreadPage: 'post thread page',
+  status: 'post',
   // toast messages
   blockedAccount: 'Blocked account',
   unblockedAccount: 'Unblocked account',
   unableToBlock: 'Unable to block account: {error}',
   unableToUnblock: 'Unable to unblock account: {error}',
-  bookmarkedStatus: 'Bookmarked toot',
-  unbookmarkedStatus: 'Unbookmarked toot',
+  bookmarkedStatus: 'Bookmarked post',
+  unbookmarkedStatus: 'Unbookmarked post',
   unableToBookmark: 'Unable to bookmark: {error}',
   unableToUnbookmark: 'Unable to unbookmark: {error}',
   cannotPostOffline: 'You cannot post while offline',
-  unableToPost: 'Unable to post toot: {error}',
-  statusDeleted: 'Toot deleted',
-  unableToDelete: 'Unable to delete toot: {error}',
+  unableToPost: 'Unable to post post: {error}',
+  statusDeleted: 'post deleted',
+  unableToDelete: 'Unable to delete post: {error}',
   cannotFavoriteOffline: 'You cannot favorite while offline',
   cannotUnfavoriteOffline: 'You cannot unfavorite while offline',
   unableToFavorite: 'Unable to favorite: {error}',
@@ -624,9 +624,9 @@ export default {
   unmutedConversation: 'Unmuted conversation',
   unableToMuteConversation: 'Unable to mute conversation: {error}',
   unableToUnmuteConversation: 'Unable to unmute conversation: {error}',
-  unpinnedStatus: 'Unpinned toot',
-  unableToPinStatus: 'Unable to pin toot: {error}',
-  unableToUnpinStatus: 'Unable to unpin toot: {error}',
+  unpinnedStatus: 'Unpinned post',
+  unableToPinStatus: 'Unable to pin post: {error}',
+  unableToUnpinStatus: 'Unable to unpin post: {error}',
   unableToRefreshPoll: 'Unable to refresh poll: {error}',
   unableToVoteInPoll: 'Unable to vote in poll: {error}',
   cannotReblogOffline: 'You cannot boost while offline.',
@@ -652,7 +652,7 @@ export default {
   unableToSubscribe: 'Unable to subscribe: {error}',
   unableToUnsubscribe: 'Unable to unsubscribe: {error}',
   showingOfflineContent: 'Internet request failed. Showing offline content.',
-  youAreOffline: 'You seem to be offline. You can still read toots while offline.',
+  youAreOffline: 'You seem to be offline. You can still read posts while offline.',
   // Snackbar UI
   updateAvailable: 'App update available.',
   // Word/phrase filters

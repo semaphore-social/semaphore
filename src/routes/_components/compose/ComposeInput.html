@@ -108,7 +108,7 @@
               textarea.selectionStart = textarea.selectionEnd = newSelectionStart
             }
             // this next autosize is required to resize after
-            // the user clicks the "toot" button
+            // the user clicks the "post" button
             mark('autosize.update()')
             autosize.update(textarea)
             stop('autosize.update()')
@@ -173,7 +173,7 @@
       },
       onKeydown (e) {
         const { keyCode } = e
-        // ctrl or cmd (on macs) was pressed; ctrl-enter means post a toot
+        // ctrl or cmd (on macs) was pressed; ctrl-enter means create a post
         const ctrlPressed = e.getModifierState('Control') || e.getModifierState('Meta')
         switch (keyCode) {
           case 9: { // tab

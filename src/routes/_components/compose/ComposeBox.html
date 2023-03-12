@@ -200,7 +200,7 @@
         }
         // The reason we add a scheduleIdleTask delay here is because we also use scheduleIdleTask
         // in ComposeInput.html to debounce the input events. If the user is very fast at typing
-        // at their keyboard and quickly presses Ctrl+Enter or the "Toot" button then there could
+        // at their keyboard and quickly presses Ctrl+Enter or the "Post" button then there could
         // be a race condition where not all of their status is posted.
         this.set({ aboutToPostStatus: true })
         scheduleIdleTask(() => {

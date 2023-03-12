@@ -1,10 +1,10 @@
 <DynamicPageBanner title="{intl.pinnedStatuses}" icon="#fa-thumb-tack" />
 {#if $isUserLoggedIn }
-  <div class="pinned-toots-page">
+  <div class="pinned-posts-page">
     {#if loading}
     <LoadingPage />
     {:elseif statuses && statuses.length}
-    <ul class="pinned-toots-results">
+    <ul class="pinned-posts-results">
       {#each statuses as status, index}
       <StatusSearchResult {status} {index} length={statuses.length} />
       {/each}
@@ -13,18 +13,18 @@
   </div>
 {/if}
 <style>
-  .pinned-toots-page {
+  .pinned-posts-page {
     padding: 20px 20px;
     position: relative;
   }
-  .pinned-toots-results {
+  .pinned-posts-results {
     list-style: none;
     box-sizing: border-box;
     border: 1px solid var(--main-border);
     border-radius: 2px;
   }
   @media (max-width: 767px) {
-    .pinned-toots-page {
+    .pinned-posts-page {
       padding: 20px 10px;
     }
   }

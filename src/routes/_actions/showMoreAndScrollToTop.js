@@ -6,7 +6,7 @@ import { tryToFocusElement } from '../_utils/tryToFocusElement.js'
 
 export function showMoreAndScrollToTop () {
   // Similar to Twitter, pressing "." will click the "show more" button and select
-  // the first toot.
+  // the first post.
   showMoreItemsForCurrentTimeline()
   const {
     currentInstance,

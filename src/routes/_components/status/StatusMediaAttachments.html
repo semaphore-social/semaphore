@@ -220,7 +220,7 @@
         sensitivesShown[uuid] = !sensitivesShown[uuid]
         this.store.set({ sensitivesShown })
         this.fire('recalculateHeight')
-        // Only change focus for clicks, not for hotkeys. It's weird if, when the entire toot
+        // Only change focus for clicks, not for hotkeys. It's weird if, when the entire post
         // is focused and you press "y", that the focus changes to the sensitive media button.
         if (changeFocus) {
           requestAnimationFrame(() => {

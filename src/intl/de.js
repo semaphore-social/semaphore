@@ -187,7 +187,7 @@ export default {
   pinPage: 'Hefte {label} an',
   // Status composition
   composeStatus: 'Tröt erstellen',
-  postStatus: 'Tröt!',
+  postStatus: 'Post',
   contentWarning: 'Inhaltswarnung',
   dropToUpload: 'Fallenlassen zum Hochladen',
   invalidFileType: 'Ungültiger Dateityp',

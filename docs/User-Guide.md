@@ -8,15 +8,15 @@ This will walk you through the basic usage of Semaphore and its major difference
 
 ## Home page
 
-The home page is both where you write toots and where you read your home timeline:
+The home page is both where you write posts and where you read your home timeline:
 
 ![Screenshot of home page](https://github.com/NickColley/semaphore/blob/main/docs/Screenshot1.png)
 
-When you scroll down, the "toot" button transforms into a "compose" button:
+When you scroll down, the "post" button transforms into a "compose" button:
 
 ![Screenshot showing home page scrolled down](https://github.com/NickColley/semaphore/blob/main/docs/Screenshot2.png)
 
-If you press this compose button, you can toot anywhere in your home timeline.
+If you press this compose button, you can post anywhere in your home timeline.
 
 ![Screenshot showing compose box in a modal dialog](https://github.com/NickColley/semaphore/blob/main/docs/Screenshot3.png)
 
