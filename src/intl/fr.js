@@ -264,6 +264,8 @@ export default {
   unmute: 'Ne plus mettre en sourdine',
   zoomOut: 'Dé-zoomer',
   zoomIn: 'Zoomer',
+  imageDescription: 'Image description',
+  altMediaAriaLabel: 'alternative description (ALT) for media {number}',
   // Reporting
   reportingLabel: 'Vous signalez {account} aux modérateurs/modératrices de {instance}.',
   additionalComments: 'Commentaires additionels',

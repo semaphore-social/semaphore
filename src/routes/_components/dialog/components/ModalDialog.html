@@ -5,9 +5,10 @@
 <div class={contentsClass}
      role="dialog"
      aria-label={label || ''}
+     style="background: {background || '#000'};"
      ref:node
 >
-  <div class="modal-dialog-document" role="document" style="background: {background || '#000'};">
+  <div class="modal-dialog-document" role="document">
     <div class="modal-dialog-header" on:click="onClickHeader(event)">
       {#if title}
         <h1 class="modal-dialog-title">{title}</h1>
@@ -28,6 +29,7 @@
     display: none;
   }
   :global(.modal-dialog) {
+    --model-dialog-border-radius: 4px;
     position: fixed;
     z-index: 10000;
     top: 0;
@@ -54,13 +56,13 @@
   .modal-dialog-contents {
     z-index: 10020;
     padding: 0;
-    border: 1px solid var(--main-border);
-    border-radius: 2px;
     display: flex;
     flex-direction: row;
     max-height: calc(100% - 20px);
     max-width: calc(100% - 20px);
     flex: 0 1 580px;
+    border: 1px solid var(--main-border);
+    border-radius: var(--model-dialog-border-radius);
   }
   .modal-dialog-contents.should-animate {
     transition: opacity 0.2s linear;
@@ -80,12 +82,14 @@
     background: var(--nav-bg);
     display: flex;
     align-items: center;
+    border-top-left-radius: calc(var(--model-dialog-border-radius) - 1px);
+    border-top-right-radius: calc(var(--model-dialog-border-radius) - 1px);
   }
   .modal-dialog-title {
     color: var(--nav-text-color);
     padding: 2px 0 2px 10px;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

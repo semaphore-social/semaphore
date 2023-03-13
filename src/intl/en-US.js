@@ -270,6 +270,8 @@ export default {
   unmute: 'Unmute',
   zoomOut: 'Zoom out',
   zoomIn: 'Zoom in',
+  imageDescription: 'Image description',
+  altMediaAriaLabel: 'alternative description (ALT) for media {number}',
   // Reporting
   reportingLabel: 'You are reporting {account} to the moderators of {instance}.',
   additionalComments: 'Additional comments',

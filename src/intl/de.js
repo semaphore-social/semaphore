@@ -262,6 +262,8 @@ export default {
   unmute: 'Stummschaltung aufheben',
   zoomOut: 'Herauszoomen',
   zoomIn: 'Hineinzoomen',
+  imageDescription: 'Image description',
+  altMediaAriaLabel: 'alternative description (ALT) for media {number}',
   // Reporting
   reportingLabel: 'Du machst eine Meldung von {account} an die Moderatoren von {instance}.',
   additionalComments: 'Zusätzliche Kommentare',

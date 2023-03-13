@@ -1,3 +1,4 @@
+<div class="media">
 {#if !blurhash && (type === 'video' || type === 'audio')}
     <button id={elementId}
             type="button"
@@ -70,8 +71,19 @@
   {/if}
 </button>
 {/if}
+{#if !blurhash && type === 'image' && description}
+<button
+  on:click='handleAltClick(event)'
+  class="alt-button"
+  aria-label={altLabel}
+>ALT</button>
+{/if}
+</div>
 <style>
-
+  .media {
+    position: relative;
+    width: 100%;
+  }
   :global(.status-media video, .status-media img) {
     object-fit: cover;
   }
@@ -92,6 +104,32 @@
 
   .inline-media {
     position: relative;
+    display: block;
+  }
+
+  .alt-button {
+    --alt-button-margin: 10px;
+    z-index: 1;
+    position: absolute;
+    bottom: var(--alt-button-margin);
+    left: var(--alt-button-margin);
+    padding: 6px 8px;
+    font-size: 1em;
+    line-height: 1;
+    border: none;
+    border-radius: 2px;
+    background: var(--alt-button-bg);
+    color: var(--alt-button-color);
+  }
+
+  /* Increase touch area to make it easy not to miss the button */
+  .alt-button::before {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--alt-button-margin) - 1px);
+    right: calc(-1 * var(--alt-button-margin) - 1px);
+    bottom: calc(-1 * var(--alt-button-margin) - 1px);
+    left: calc(-1 * var(--alt-button-margin) - 1px);
   }
 
   @media (max-width: 240px) {
@@ -103,6 +141,7 @@
 <script>
   import { DEFAULT_MEDIA_WIDTH, DEFAULT_MEDIA_HEIGHT, ONE_TRANSPARENT_PIXEL } from '../../_static/media.js'
   import { importShowMediaDialog } from '../dialog/asyncDialogs/importShowMediaDialog.js'
+  import { importShowMediaAltDialog } from '../dialog/asyncDialogs/importShowMediaAltDialog.js'
   import { mouseover } from '../../_utils/events.js'
   import NonAutoplayGifv from '../NonAutoplayGifv.html'
   import PlayVideoIcon from '../PlayVideoIcon.html'
@@ -116,7 +155,7 @@
 export default {
     async oncreate () {
       const { elementId } = this.get()
-      registerClickDelegate(this, elementId, () => this.onClick())
+      registerClickDelegate(this, elementId, () => this.handleImageClick())
     },
     computed: {
       focus: ({ meta }) => meta && meta.focus,
@@ -176,14 +215,27 @@ export default {
       ),
       animatedLabel: ({ description }) => (
         formatIntl('intl.animatedImage', { description })
+      ),
+      altLabel: ({ index }) => (
+        formatIntl('intl.altMediaAriaLabel', { number: index + 1 })
       )
     },
     methods: {
-      onClick () {
+      handleImageClick () {
         (async () => {
           const { mediaAttachments, index } = this.get()
           const showMediaDialog = await importShowMediaDialog()
           showMediaDialog(mediaAttachments, index)
+        })()
+        return true
+      },
+      handleAltClick (event) {
+        (async () => {
+          const { mediaAttachments, index } = this.get()
+          const media = mediaAttachments[index]
+          const { description } = media
+          const showMediaAltDialog = await importShowMediaAltDialog()
+          showMediaAltDialog(description)
         })()
         return true
       }

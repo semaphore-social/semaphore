@@ -2,6 +2,7 @@
 /node_modules
 /__sapper__
 /mastodon
+/mastodon/*
 /mastodon.log
 /src/template.html
 /static/*.css

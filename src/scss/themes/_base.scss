@@ -77,6 +77,9 @@
   --mask-opaque-bg: #{rgba($toast-bg, 0.8)};
   --loading-bg: #{#ededed};
 
+  --alt-button-bg: #{rgba($toast-bg, 0.8)};
+  --alt-button-color: #{$secondary-text-color};
+
   --account-profile-bg-backdrop-filter: #{rgba($main-bg-color, 0.85)};
   --account-profile-bg: #{rgba($main-bg-color, 0.9)};
 

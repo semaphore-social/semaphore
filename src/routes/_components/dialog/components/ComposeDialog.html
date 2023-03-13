@@ -5,7 +5,12 @@
   background="var(--main-bg)"
   on:show="onShow()"
 >
-  <ComposeBox {realm} autoFocus={true} dialogId={id} />
+  <ComposeBox
+    {realm}
+    autoFocus={true}
+    dialogId={id}
+    hideBottomBorder={true}
+  />
 </ModalDialog>
 <script>
   import ModalDialog from './ModalDialog.html'

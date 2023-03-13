@@ -1,0 +1,34 @@
+<ModalDialog
+  {id}
+  {label}
+  title="{intl.imageDescription}"
+  background="var(--main-bg)">
+  <div class="content">
+    {#if description}{description}{/if}
+  </div>
+</ModalDialog>
+<style>
+  .content {
+    box-sizing: border-box;
+    padding: 13px 11px 15px;
+    font-size: 1.2em;
+    width: 100%;
+  }
+</style>
+<script>
+  import ModalDialog from './ModalDialog.html'
+  import { show } from '../helpers/showDialog.js'
+  import { close } from '../helpers/closeDialog.js'
+  import { oncreate } from '../helpers/onCreateDialog.js'
+
+  export default {
+    oncreate,
+    components: {
+      ModalDialog
+    },
+    methods: {
+      show,
+      close
+    }
+  }
+</script>
