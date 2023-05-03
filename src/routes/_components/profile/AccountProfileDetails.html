@@ -1,5 +1,15 @@
 <h2 class="sr-only">{intl.statisticsAndMoreOptions}</h2>
 <div class="account-profile-details">
+  <span class="account-profile-details-item"
+    aria-label={joinedLabel}
+  >
+    <span class="account-profile-details-item-datum">
+      {joinDate}
+    </span>
+    <span class="account-profile-details-item-title">
+      {intl.joined}
+    </span>
+  </span>
   <div class="account-profile-details-item">
     <span class="account-profile-details-item-datum">
       {numStatusesDisplay}
@@ -93,6 +103,7 @@
   import { LOCALE } from '../../_static/intl.js'
   import { formatIntl } from '../../_utils/formatIntl.js'
   import { thunk } from '../../_utils/thunk.js'
+  import { shortAbsoluteDateOnlyFormatter } from '../../_utils/formatters.js'
 
   const numberFormat = thunk(() => new Intl.NumberFormat(LOCALE))
 
@@ -114,7 +125,12 @@
       ),
       followingLabel: ({ numFollowing }) => (
         formatIntl('intl.followingLabel', { count: numFollowing })
-      )
+      ),
+      joinedLabel: ({ joinDate }) => (
+        formatIntl('intl.joinedLabel', { date: joinDate })
+      ),
+      createdAtDateTS: ({ account }) => new Date(account.created_at).getTime(),
+      joinDate: ({ createdAtDateTS }) => shortAbsoluteDateOnlyFormatter().format(createdAtDateTS)
     }
   }
 </script>

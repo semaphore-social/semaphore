@@ -42,3 +42,9 @@ export const dayOnlyAbsoluteDateFormatter = thunk(() => safeFormatter(new Intl.D
   month: 'short',
   day: 'numeric'
 })))
+
+export const shortAbsoluteDateOnlyFormatter = thunk(() => safeFormatter(new Intl.DateTimeFormat(LOCALE, {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+})))

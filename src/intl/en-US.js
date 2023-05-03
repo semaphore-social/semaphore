@@ -296,9 +296,11 @@ export default {
   statuses: 'Toots',
   follows: 'Follows',
   followers: 'Followers',
+  joined: 'Joined',
   moreOptions: 'More options',
   followersLabel: 'Followed by {count}',
   followingLabel: 'Follows {count}',
+  joinedLabel: 'Joined on {date}',
   followLabel: `Follow {requested, select,
     true {(follow requested)}
     other {}
