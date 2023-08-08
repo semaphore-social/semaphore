@@ -1,17 +1,17 @@
 import { post, paramsString, WRITE_TIMEOUT } from '../_utils/ajax.js'
 import { basename } from './utils.js'
 
-const WEBSITE = 'https://semaphore.social'
 const SCOPES = 'read write follow push'
 const CLIENT_NAME = 'Semaphore'
 
 export function registerApplication (instanceName, redirectUri) {
-  const url = `${basename(instanceName)}/api/v1/apps`
+  const website = basename(instanceName)
+  const url = `${website}/api/v1/apps`
   return post(url, {
     client_name: CLIENT_NAME,
     redirect_uris: redirectUri,
     scopes: SCOPES,
-    website: WEBSITE
+    website: website
   }, null, { timeout: WRITE_TIMEOUT })
 }
 
