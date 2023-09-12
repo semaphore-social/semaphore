@@ -49,8 +49,8 @@ export default {
       }}
       community {{count, plural,
         =0 {}
-        one {(1 demande de suivre)}
-        other {({count} demandes de suivre)}
+        one {(1 demande de vous suivre)}
+        other {({count} demandes de vous suivre)}
       }}
       other {}
     }
@@ -83,25 +83,37 @@ export default {
   pinnableTimelines: 'Historiques épinglables',
   timelines: 'Historiques',
   lists: 'Listes',
+  search: 'Recherche',
+  pageHeader: 'Titre de page',
+  goBack: 'Rentrer',
+  back: 'Rentrer',
+  profile: 'Profil',
+  federatedTimeline: 'Historique fédéré',
+  localTimeline: 'Historique local',
+  // community page
+  community: 'Communauté',
+  pinnableTimelines: 'Historiques épinglables',
+  timelines: 'Historiques',
+  lists: 'Listes',
   instanceSettings: "Paramètres d'instance",
   notificationMentions: 'Notifications de mention',
   profileWithMedia: 'Profil avec medias',
   profileWithReplies: 'Profil avec réponses',
   hashtag: 'Mot-dièse',
   // not logged in
-  profileNotLoggedIn: "Un historique d'utilisateur s'apparêtra ici quand on est conncté.",
-  bookmarksNotLoggedIn: "Vos signets s'apparêtront ici quand on est conncté.",
-  directMessagesNotLoggedIn: "Vos messages directes s'apparêtront ici quand on est conncté.",
-  favoritesNotLoggedIn: "Vos favoris s'apparêtront ici quand on est conncté.",
-  federatedTimelineNotLoggedIn: "L'historique fédéré s'apparêtra ici quand on est conncté.",
-  localTimelineNotLoggedIn: "L'historique local s'apparêtra ici quand on est conncté.",
-  searchNotLoggedIn: "On peut rechercher dès qu'on est conncté.",
-  communityNotLoggedIn: "Les paramètres de commnautés s'apparêtront ici quand on est conncté.",
-  listNotLoggedIn: "Une liste s'apparêtra ici dès qu'on est conncté.",
-  notificationsNotLoggedIn: "Vos notifications s'apparêtront ici quand on est conncté.",
-  notificationMentionsNotLoggedIn: "Vos notifications de mention s'apparêtront ici quand on est conncté.",
-  statusNotLoggedIn: "Un historique de pouet s'apparêtra ici quand on est conncté.",
-  tagNotLoggedIn: "Un historique de mot-dièse s'apparêtra ici quand on est conncté.",
+  profileNotLoggedIn: "Un historique d'utilisateur apparait ici quand on est connecté.",
+  bookmarksNotLoggedIn: "Vos signets apparaissent ici quand vous êtes connecté.",
+  directMessagesNotLoggedIn: "Vos messages directs apparaissent ici quand vous êtes connecté.",
+  favoritesNotLoggedIn: "Vos favoris apparaissent ici quand vous connecté.",
+  federatedTimelineNotLoggedIn: "L'historique fédéré apparait ici quand on est connecté.",
+  localTimelineNotLoggedIn: "L'historique local apparait ici quand on est connecté.",
+  searchNotLoggedIn: "On peut faire rechercher dès que l'on est connecté.",
+  communityNotLoggedIn: "Les paramètres de commnautés apparaissent ici quand on est connecté.",
+  listNotLoggedIn: "Une liste apparait ici dès qu'on est connecté.",
+  notificationsNotLoggedIn: "Vos notifications apparaissent ici quand on est connecté.",
+  notificationMentionsNotLoggedIn: "Vos notifications de mention apparaissent ici quand vous êtes connecté.",
+  statusNotLoggedIn: "Un historique de pouet apparait ici quand on est connecté.",
+  tagNotLoggedIn: "Un historique de hastag apparait ici quand on est connecté.",
   // Notification subpages
   filters: 'Filtres',
   all: 'Tous',
@@ -132,7 +144,7 @@ export default {
     </li>
     <li><kbd>7</kbd> or <kbd>c</kbd> pour écrire un nouveau pouet</li>
     <li><kbd>s</kbd> or <kbd>/</kbd> pour rechercher</li>
-    <li><kbd>g</kbd> + <kbd>h</kbd> pour renter à l'acceuil</li>
+    <li><kbd>g</kbd> + <kbd>h</kbd> pour revenir à l'acceuil</li>
     <li><kbd>g</kbd> + <kbd>n</kbd> pour voir les notifications</li>
     <li><kbd>g</kbd> + <kbd>l</kbd> pour voir l'historique local</li>
     <li><kbd>g</kbd> + <kbd>t</kbd> pour voir l'historique fédéré</li>
@@ -194,20 +206,20 @@ export default {
   dropToUpload: 'Déposer',
   invalidFileType: "Impossible d'uploader ce type de fichier",
   composeLabel: "Qu'avez vous en tête?",
-  autocompleteDescription: 'Quand les résultats sont dispibles, appuyez la fleche vers le haut ou vers le bas pour selectionner.',
-  mediaUploads: 'Medias uploadés',
+  autocompleteDescription: 'Quand les résultats sont disponibles, appuyez sur la flèche vers le haut ou vers le bas pour selectionner.',
+  mediaUploads: 'Medias envoyés',
   edit: 'Rediger',
   delete: 'Supprimer',
-  description: 'Déscription',
+  description: 'Description',
   descriptionLabel: 'Décrire pour les aveugles (image, video) ou les sourds (audio, video)',
   markAsSensitive: 'Désigner comme sensible',
   // Polls
   createPoll: 'Créer une enquête',
   removePollChoice: 'Supprimer la choix {index}',
   pollChoiceLabel: 'Choix {index}',
-  multipleChoice: 'Choix multiple',
-  pollDuration: "Duration de l'enquête",
-  fiveMinutes: '5 minutes',
+  multipleChoice: 'Choix multiples',
+  pollDuration: "Durée de l'enquête",
+ fiveMinutes: '5 minutes',
   thirtyMinutes: '30 minutes',
   oneHour: '1 heure',
   sixHours: '6 heures',
@@ -219,7 +231,7 @@ export default {
   addPoll: 'Ajouter une enquête',
   removePoll: "Enlever l'enquête",
   postPrivacyLabel: 'Changer de confidentialité (actuellement {label})',
-  addContentWarning: 'Ajouter une avertissement',
+  addContentWarning: 'Ajouter un avertissement',
   removeContentWarning: "Enlever l'avertissement",
   altLabel: 'Décrire pour les aveugles ou les sourds',
   extractText: "Extraire le texte de l'image",
@@ -241,7 +253,7 @@ export default {
   mentionAccount: 'Mentionner {account}',
   copyLinkToAccount: 'Copier un lien vers ce compte',
   copiedToClipboard: 'Copié vers le presse-papiers',
-  // Media dialog
+ // Media dialog
   navigateMedia: 'Changer de medias',
   showPreviousMedia: 'Afficher le media précédent',
   showNextMedia: 'Afficher le media suivant',
@@ -338,7 +350,7 @@ export default {
   </p>
 
   <p>
-    Semaphore est un site statique. Tous données sont gardées en locale dans le navigateur, et sont partagée qu'avec
+    Semaphore est un site statique. Tous les données sont gardées en locale dans le navigateur, et ne sont partagées qu'avec
     les instances auxquelles vous vous connectez.
   </p>
 
@@ -355,21 +367,21 @@ export default {
   // Settings
   settings: 'Paramètres',
   general: 'Général',
-  generalSettings: 'Paramètres générales',
-  showSensitive: 'Afficher les medias sensible par défaut',
+  generalSettings: 'Paramètres généraux',
+  showSensitive: 'Afficher les medias sensibles par défaut',
   showPlain: 'Afficher un simple gris pour les medias sensibles',
-  allSensitive: 'Considérer tous medias comme sensible',
-  largeMedia: 'Afficher de plus grands images et vidéos',
+  allSensitive: 'Considérer tous medias comme sensibles',
+  largeMedia: 'Afficher en grands images et vidéos',
   autoplayGifs: 'Repasser automatiquement les GIFs animés',
   hideCards: 'Cacher les liens «cartes»',
   underlineLinks: 'Souligner les liens dans les pouets et profils',
   accessibility: 'Accessibilité',
-  reduceMotion: 'Reduire la motions dans les animations',
-  disableTappable: "Désactiver l'espace touchable sur un pouet entier",
+  reduceMotion: 'Reduire la vitesse des animations',
+  disableTappable: "Désactiver l'espace clickable sur un pouet entier",
   removeEmoji: "Enlever les emojis des noms d'utilisateur",
   shortAria: 'Utiliser des etiquettes courtes ARIA',
   theme: 'Thème',
-  themeForInstance: 'Theème pour {instance}',
+  themeForInstance: 'Thème pour {instance}',
   disableCustomScrollbars: 'Désactiver les scrollbars customisés',
   preferences: 'Préférences',
   hotkeySettings: 'Paramètres de raccourcis clavier',
@@ -380,10 +392,10 @@ export default {
   // Wellness settings
   wellness: 'Bien-être',
   wellnessSettings: 'Paramètres de bien-être',
-  wellnessDescription: `Les paramètres de bien-être sont dessinées pour rédruire les effets accrochants ou d'anxiété des réseaux sociaux.
+  wellnessDescription: `Les paramètres de bien-être sont destinés à réduire les fonctions trop captivantes ou génératrices d'anxiété des réseaux sociaux.
     Veuillez choisir les options qui marchent pour vous.`,
   enableAll: 'Activer tous',
-  metrics: 'Métrics',
+  metrics: 'Métriques',
   hideFollowerCount: 'Cacher le nombre de suivants (10 maximum)',
   hideReblogCount: 'Cacher le nombre de partages',
   hideFavoriteCount: 'Cacher le nombre de favoris',
@@ -399,7 +411,7 @@ export default {
   // Custom tooltips, like "Disable _infinite scroll_", where you can click _infinite scroll_
   // to see a description. It's hard to properly internationalize, so we just break up the strings.
   disableInfiniteScrollPre: 'Désactiver le',
-  disableInfiniteScrollText: 'défilage infini',
+  disableInfiniteScrollText: 'Défilement infini',
   disableInfiniteScrollDescription: `Quand le défilage infini est désactivé, les pouets nouveau ne
              s'apparêtront pas automatique au haut ou au bas de l'historique. Plutôt, il y aura des boutons pour
              charger sur demande.`,
@@ -410,7 +422,7 @@ export default {
   notificationFilters: 'Filtres de notifications',
   pushNotifications: 'Filtres de notifications push',
   // Add instance page
-  storageError: `Il semble que Semaphore ne peut pas stocker les données en locale. Est-ce que votre navigateur
+  storageError: `Il semble que Semaphore ne peut pas stocker les données en local. Est-ce que votre navigateur
           est en mode privé, ou est-ce qu'il bloque les cookies? Semaphore garde tous ses données en locale et
           ne peut pas fonctionner sans LocalStorage ou IndexedDB.`,
   javaScriptError: 'Le JavaScript devrait être activé pour continuer.',
@@ -545,7 +557,7 @@ export default {
     other {{count} votes}
   }`,
   // Status interactions
-  clickToShowThread: '{time} - cliquer pour afficher le discussion',
+  clickToShowThread: '{time} - cliquer pour afficher la discussion',
   showMore: 'Afficher plus',
   showLess: 'Afficher moins',
   closeReply: 'Fermer la réponse',
@@ -601,30 +613,30 @@ export default {
   unableToUnpinStatus: 'Impossible de ne plus épingler: {error}',
   unableToRefreshPoll: 'Impossible de recharger: {error}',
   unableToVoteInPoll: 'Impossible de voter: {error}',
-  cannotReblogOffline: 'Vous ne pouvez pas partager car vous êtes hors de connexion.',
-  cannotUnreblogOffline: 'Vous ne pouvez pas ne plus partager car vous êtes hors de connexion.',
+  cannotReblogOffline: 'Vous ne pouvez pas partager car vous êtes pas déconnecté.',
+  cannotUnreblogOffline: 'Vous ne pouvez pas ne plus partager car vous êtes déconnecté.',
   failedToReblog: 'Impossible de partager: {error}',
   failedToUnreblog: 'Impossible de ne plus partager: {error}',
   submittedReport: 'Report signalé',
   failedToReport: 'Impossible de signaler: {error}',
-  approvedFollowRequest: 'Demande de suivre approuvée',
-  rejectedFollowRequest: 'Demande de suivre rejetée',
+  approvedFollowRequest: 'Demande de suivie approuvée',
+  rejectedFollowRequest: 'Demande de suivie rejetée',
   unableToApproveFollowRequest: "Impossible d'appouver: {error}",
   unableToRejectFollowRequest: 'Impossible de rejeter: {error}',
   searchError: 'Erreur de recherche: {error}',
-  hidDomain: 'Domaine cachée',
-  unhidDomain: 'Domaine ne plus cachée',
-  unableToHideDomain: 'Impossible de cacher la domaine: {error}',
-  unableToUnhideDomain: 'Imipossible de ne plus cacher la domaine: {error}',
+  hidDomain: 'Cacher le domaine',
+  unhidDomain: 'Ne plus cacher le domaine',
+  unableToHideDomain: 'Impossible de cacher le domaine: {error}',
+  unableToUnhideDomain: 'Impossible de ne plus cacher le domaine: {error}',
   showingReblogs: 'Partages affichés',
-  hidingReblogs: 'Partages ne plus affichés',
+  hidingReblogs: 'Ne plus afficher les partages',
   unableToShowReblogs: "Impossible d'afficher les partages: {error}",
   unableToHideReblogs: 'Impossible de ne plus afficher les partages: {error}',
-  unableToShare: 'Impossible de partager externellement: {error}',
-  showingOfflineContent: "Requête d'internet impossible. Contenu hors de connexion affiché.",
-  youAreOffline: 'Il semble que vous êtes hors de connextion. Vous pouvez toujours lire les pouets dans cet état.',
+  unableToShare: 'Impossible de partager : {error}',
+  showingOfflineContent: "Requête d'internet impossible. Contenu hors connexion affiché.",
+  youAreOffline: 'Il semble que vous êtes déconnecté. Vous pouvez toujours lire les pouets dans cet état.',
   // Snackbar UI
   updateAvailable: 'Mise à jour disponible.',
   // Details
-  statusEdited: 'Edited'
+  statusEdited: 'Edité'
 }
