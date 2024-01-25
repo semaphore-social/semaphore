@@ -38,6 +38,12 @@
       pressable={true}
       pressed={contentWarningShown}
     />
+    <IconButton
+      className="compose-toolbar-button"
+      label={setLanguageLabel}
+      href="#fa-language"
+      on:click="onSetLanguageClick()"
+    />
   </div>
   <input ref:input
          on:change="onFileChange(event)"
@@ -74,6 +80,7 @@
   import { store } from '../../_store/store.js'
   import { importShowEmojiDialog } from '../dialog/asyncDialogs/importShowEmojiDialog.js'
   import { importShowPostPrivacyDialog } from '../dialog/asyncDialogs/importShowPostPrivacyDialog.js'
+  import { importShowSetLanguageDialog } from '../dialog/asyncDialogs/importShowSetLanguageDialog.js'
   import { doMediaUpload } from '../../_actions/media.js'
   import { toggleContentWarningShown } from '../../_actions/contentWarnings.js'
   import { mediaAccept } from '../../_static/media.js'
@@ -91,6 +98,9 @@
     computed: {
       postPrivacyLabel: ({ postPrivacy }) => (
         formatIntl('intl.postPrivacyLabel', { label: postPrivacy.label })
+      ),
+      setLanguageLabel: ({ language }) => (
+        formatIntl('intl.setLanguageLabel', { label: language })
       )
     },
     store: () => store,
@@ -118,6 +128,11 @@
         const { realm } = this.get()
         const showPostPrivacyDialog = await importShowPostPrivacyDialog()
         showPostPrivacyDialog(realm)
+      },
+      async onSetLanguageClick () {
+        const { realm } = this.get()
+        const showSetLanguageDialog = await importShowSetLanguageDialog()
+        showSetLanguageDialog(realm)
       },
       onContentWarningClick () {
         const { realm } = this.get()

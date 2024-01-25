@@ -1,0 +1,50 @@
+<ModalDialog
+  {id}
+  {label}
+  {title}
+  shrinkWidthToFit={true}
+  background="var(--main-bg)"
+>
+  <GenericDialogList selectable={true} {items} on:click="onClick(event)" />
+</ModalDialog>
+<script>
+  import ModalDialog from './ModalDialog.html'
+  import { store } from '../../../_store/store.js'
+  import { setLanguage } from '../../../_actions/language.js'
+  import GenericDialogList from './GenericDialogList.html'
+  import { show } from '../helpers/showDialog.js'
+  import { close } from '../helpers/closeDialog.js'
+  import { oncreate } from '../helpers/onCreateDialog.js'
+
+  export default {
+    oncreate,
+    components: {
+      ModalDialog,
+      GenericDialogList
+    },
+    store: () => store,
+    methods: {
+      show,
+      close,
+      onClick (item) {
+        const { realm } = this.get()
+        setLanguage(realm, item.key)
+        this.close()
+      }
+    },
+    computed: {
+      composeData: ({ $currentComposeData, realm }) => $currentComposeData[realm] || {},
+      language: ({ composeData, $languages }) => {
+        return composeData.language ? composeData.language : ($languages.length ? $languages[0] : 'en')
+      },
+      items: ({ language, $languages }) => {
+        return $languages.map(option => ({
+          key: option,
+          label: option.toUpperCase(),
+          icon: 'fa-language',
+          selected: language === option
+        }))
+      }
+    }
+  }
+</script>

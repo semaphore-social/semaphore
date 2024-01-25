@@ -19,7 +19,7 @@
         <ComposePoll {realm} {poll} />
       </div>
     {/if}
-    <ComposeToolbar {realm} {postPrivacy} {media} {contentWarningShown} {text} {poll} />
+    <ComposeToolbar {realm} {postPrivacy} {media} {language} {contentWarningShown} {text} {poll} />
     <ComposeLengthIndicator {length} {overLimit} />
     <ComposeMedia {realm} {media} />
     <ComposeMediaSensitive {realm} {media} {sensitive} {contentWarning} {contentWarningShown} />
@@ -173,6 +173,9 @@
       poll: ({ composeData }) => composeData.poll,
       inReplyToId: ({ composeData }) => composeData.inReplyToId,
       postPrivacy: ({ postPrivacyKey }) => POST_PRIVACY_OPTIONS.find(_ => _.key === postPrivacyKey),
+      language: ({ composeData, $languages }) => {
+        return composeData.language ? composeData.language : ($languages.length ? $languages[0] : 'en')
+      },
       defaultPostPrivacyKey: ({ $currentVerifyCredentials }) => (
         ($currentVerifyCredentials && $currentVerifyCredentials.source.privacy) || 'public'
       ),
@@ -219,7 +222,8 @@
           inReplyToUuid, // typical replies, using Semaphore-specific uuid
           inReplyToId, // delete-and-redraft replies, using standard id
           poll,
-          sensitive
+          sensitive,
+          language
         } = this.get()
         const mediaIds = media.map(_ => _.data.id)
         const mediaDescriptions = media.map(_ => _.description)
@@ -248,7 +252,7 @@
         /* no await */ postStatus(realm, text, inReplyTo, mediaIds,
           sensitive, contentWarning, postPrivacyKey,
           mediaDescriptions, inReplyToUuid, pollToPost,
-          mediaFocalPoints)
+          mediaFocalPoints, language)
       }
     }
   }

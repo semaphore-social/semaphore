@@ -3,13 +3,14 @@ import { DEFAULT_TIMEOUT, get, post, put, WRITE_TIMEOUT } from '../_utils/ajax.j
 
 // post is create, put is edit
 async function postOrPutStatus (url, accessToken, method, text, inReplyToId, mediaIds,
-  sensitive, spoilerText, visibility, poll) {
+  sensitive, spoilerText, visibility, poll, language) {
   const body = {
     status: text,
     media_ids: mediaIds,
     sensitive,
     spoiler_text: spoilerText,
     poll,
+    language,
     ...(method === 'post' && {
       // you can't change these properties when editing
       in_reply_to_id: inReplyToId,
@@ -31,17 +32,17 @@ async function postOrPutStatus (url, accessToken, method, text, inReplyToId, med
 }
 
 export async function postStatus (instanceName, accessToken, text, inReplyToId, mediaIds,
-  sensitive, spoilerText, visibility, poll) {
+  sensitive, spoilerText, visibility, poll, language) {
   const url = `${basename(instanceName)}/api/v1/statuses`
   return postOrPutStatus(url, accessToken, 'post', text, inReplyToId, mediaIds,
-    sensitive, spoilerText, visibility, poll)
+    sensitive, spoilerText, visibility, poll, language)
 }
 
 export async function putStatus (instanceName, accessToken, id, text, inReplyToId, mediaIds,
-  sensitive, spoilerText, visibility, poll) {
+  sensitive, spoilerText, visibility, poll, language) {
   const url = `${basename(instanceName)}/api/v1/statuses/${id}`
   return postOrPutStatus(url, accessToken, 'put', text, inReplyToId, mediaIds,
-    sensitive, spoilerText, visibility, poll)
+    sensitive, spoilerText, visibility, poll, language)
 }
 
 export async function getStatusContext (instanceName, accessToken, statusId) {

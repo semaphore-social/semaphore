@@ -27,7 +27,7 @@ export async function insertHandleForReply (statusId) {
 
 export async function postStatus (realm, text, inReplyToId, mediaIds,
   sensitive, spoilerText, visibility,
-  mediaDescriptions, inReplyToUuid, poll, mediaFocalPoints) {
+  mediaDescriptions, inReplyToUuid, poll, mediaFocalPoints, language) {
   const { currentInstance, accessToken, online } = store.get()
 
   if (!online) {
@@ -56,7 +56,7 @@ export async function postStatus (realm, text, inReplyToId, mediaIds,
       }
     }))
     const status = await postStatusToServer(currentInstance, accessToken, text,
-      inReplyToId, mediaIds, sensitive, spoilerText, visibility, poll, mediaFocalPoints)
+      inReplyToId, mediaIds, sensitive, spoilerText, visibility, poll, language, mediaFocalPoints)
     addStatusOrNotification(currentInstance, 'home', status)
     store.clearComposeData(realm)
     emit('postedStatus', realm, inReplyToUuid)

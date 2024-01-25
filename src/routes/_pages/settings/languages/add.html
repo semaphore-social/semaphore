@@ -1,0 +1,99 @@
+<SettingsLayout page='settings/languages/add' label={intl.addLanguage}>
+  <h1 id="add-an-language-h1">{intl.addLanguage}</h1>
+
+  <div class="add-new-language">
+    <form on:submit='onSubmitLanguage(event)' aria-labelledby="add-an-language-h1">
+
+      {#if !hasIndexedDB || !hasLocalStorage}
+        <div class="form-error form-error-user-error" role="alert">
+          {intl.storageError}
+        </div>
+      {/if}
+
+      <noscript>
+        <div class="form-error" role="alert">
+          {intl.javaScriptError}
+        </div>
+      </noscript>
+
+      <label for="languageInput">{intl.languageCode}</label>
+      <input type="text" autocapitalize="none" spellcheck="false" id="languageInput"
+             bind:value='$newLanguage' placeholder="{intl.enterLanguageCode}" required
+      >
+      <button class="primary" type="submit" id="submitButton"
+              disabled={!$newLanguage}>
+        {intl.add}
+      </button>
+    </form>
+  </div>
+
+  <p>
+    {intl.getLanguageCode}
+    <a rel="noopener" target="_blank" href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">{intl.ianaLanguageRegistry}</a>
+  </p>
+</SettingsLayout>
+<style>
+  .add-new-language {
+    background: var(--form-bg);
+    padding: 5px 10px 15px;
+    margin: 20px auto;
+    border: 1px solid var(--form-border);
+    border-radius: 4px;
+  }
+
+  .form-error {
+    border: 2px solid var(--warn-color);
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 1.3em;
+    margin: 5px;
+    background-color: var(--main-bg);
+  }
+  input {
+    min-width: 70%;
+    max-width: 100%;
+    background-color: var(--input-bg);
+  }
+
+  label, input, button, :global(.add-new-language-aside) {
+    display: block;
+    margin: 20px 5px;
+  }
+
+  @media (max-width: 767px) {
+    input {
+      min-width: 95%;
+    }
+  }
+
+</style>
+<script>
+  import SettingsLayout from '../../../_components/settings/SettingsLayout.html'
+  import { store } from '../../../_store/store.js'
+  import { addLanguage, resetNewLanguage } from '../../../_actions/addLanguage.js'
+
+  export default {
+    async oncreate () {
+      this.set({
+        hasIndexedDB: await testHasIndexedDB(),
+        hasLocalStorage: testHasLocalStorage()
+      })
+      resetNewLanguage()
+    },
+    components: {
+      SettingsLayout
+    },
+    store: () => store,
+    data: () => ({
+      hasIndexedDB: true,
+      hasLocalStorage: true
+    }),
+    methods: {
+      onSubmitLanguage (event) {
+        event.preventDefault()
+        event.stopPropagation()
+        addLanguage()
+      }
+    }
+  }
+</script>

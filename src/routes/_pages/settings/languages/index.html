@@ -1,0 +1,40 @@
+<SettingsLayout page='settings/languages' label="{intl.languages}">
+  <h1>{intl.languages}</h1>
+
+  <SettingsList>
+    {#each $languages as language}
+      <SettingsListRow>
+        <span class="language-list-item">
+          {language}
+        </span>
+      </SettingsListRow>
+    {/each}
+  </SettingsList>
+
+  <p>
+    <a rel="prefetch" href="/settings/languages/add" id="add-link-1">{intl.addLanguage}</a>
+  </p>
+</SettingsLayout>
+<style>
+  .language-list-item {
+    display: flex;
+    flex-grow: 1;
+    text-transform: uppercase;
+  }
+</style>
+<script>
+  import { store } from '../../../_store/store.js'
+  import SettingsLayout from '../../../_components/settings/SettingsLayout.html'
+  import SettingsList from '../../../_components/settings/SettingsList.html'
+  import SettingsListRow from '../../../_components/settings/SettingsListRow.html'
+  import { formatIntl } from '../../../_utils/formatIntl.js'
+
+  export default {
+    components: {
+      SettingsLayout,
+      SettingsList,
+      SettingsListRow
+    },
+    store: () => store
+  }
+</script>

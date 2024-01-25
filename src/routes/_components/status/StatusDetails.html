@@ -27,6 +27,11 @@
       </span>
     {/if}
   {/if}
+  {#if language}
+      <span class="status-application status-application-span language-tag">
+        {language}
+      </span>
+  {/if}
   <a class="status-favs-reblogs status-reblogs"
      rel="prefetch"
      href="/statuses/{originalStatusId}/reblogs"
@@ -131,6 +136,10 @@
 
   }
 
+  .language-tag {
+    text-transform: uppercase;
+  }
+
 </style>
 <script>
   import ExternalLink from '../ExternalLink.html'
@@ -181,6 +190,7 @@
         }
         return originalStatus.favourites_count || 0
       },
+      language: ({ originalStatus }) => originalStatus.language,
       displayAbsoluteFormattedDate: ({ createdAtDateTS, $isMobileSize }) => (
         ($isMobileSize ? shortAbsoluteDateFormatter : absoluteDateFormatter)().format(createdAtDateTS)
       ),

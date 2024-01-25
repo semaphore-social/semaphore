@@ -330,7 +330,7 @@ export default {
   aboutAppDescription: `
   <p>
     Semaphore is
-    <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">free and open-source software</a> 
+    <a rel="noopener" target="_blank" href="https://github.com/NickColley/semaphore">free and open-source software</a>
     maintained by <a rel="noopener" target="_blank" href="https://nickcolley.co.uk">Nick Colley</a>
     and distributed under the
     <a rel="noopener" target="_blank"
@@ -696,5 +696,15 @@ export default {
   statusesList: 'Statuses: list',
   notificationsOnInstance: 'Notifications on {instance}',
   // Details
-  statusEdited: 'Edited'
+  statusEdited: 'Edited',
+  // Settings > Languages
+  languages: 'Languages',
+  addLanguage: 'Add language',
+  add: 'Add',
+  languageCode: 'Language code',
+  enterLanguageCode: 'Enter language code',
+  getLanguageCode: 'Language should be code from ISO-639 base. To check the right code for the language visti IANA language sub-tag registry.',
+  ianaLanguageRegistry: 'IANA registry',
+  setLanguageLabel: 'Set language (current {label})',
+  setLanguage: 'Set language'
 }
